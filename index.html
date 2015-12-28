@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Site hosted on S3</title>
+	<meta http-equiv="Content-Type" content="text/hxml" charset="UTF-8" />	
+</head>
+<body>
+	<h1>Hello world</h1>
+	<div id="listing"></div>
+
+	<form action="https://mark-public-files.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="key" value="uploads/${filename}">
+      <input type="hidden" name="AWSAccessKeyId" value="AKIAIYMUDI5KFH6G33CQ"> 
+      <input type="hidden" name="acl" value="public-read"> 
+      <input type="hidden" name="success_action_redirect" value="http://mark-public-files.s3-website-eu-west-1.amazonaws.com/">
+      <input type="hidden" name="policy" value="eyJleHBpcmF0aW9uIjogIjIwMTYtMDItMDJUMDA6MDA6MDBaIiwKICAiY29uZGl0aW9ucyI6IFsgCiAgICB7ImJ1Y2tldCI6ICJtYXJrLXB1YmxpYy1maWxlcyJ9LCAKICAgIFsic3RhcnRzLXdpdGgiLCAiJGtleSIsICIiXSwKICAgIHsiYWNsIjogInB1YmxpYy1yZWFkIn0sCiAgICB7InN1Y2Nlc3NfYWN0aW9uX3JlZGlyZWN0IjogImh0dHA6Ly9tYXJrLXB1YmxpYy1maWxlcy5zMy13ZWJzaXRlLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tLyJ9LAogICAgWyJzdGFydHMtd2l0aCIsICIkQ29udGVudC1UeXBlIiwgIiJdLAogICAgWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsIDAsIDEwNDg1NzZdCiAgXQp9">
+      <input type="hidden" name="signature" value="NsPPNXov4x1m3p9TzYIXsksIJjk=">
+      <input type="hidden" name="Content-Type" value="image/jpeg">
+
+      File to upload to S3: 
+      <input name="file" type="file"> 
+      <br> 
+      <input type="submit" value="Upload File to S3"> 
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+     var S3BL_IGNORE_PATH = true;
+     var BUCKET_URL = 'http://mark-public-files.s3.amazonaws.com/';
+     var S3B_ROOT_DIR = 'uploads/'
+    </script>
+    <script src="https://rgrp.github.io/s3-bucket-listing/list.js"></script>    
+</body>
+</html>

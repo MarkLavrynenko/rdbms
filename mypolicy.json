@@ -1,0 +1,10 @@
+{"expiration": "2016-02-02T00:00:00Z",
+  "conditions": [ 
+    {"bucket": "mark-public-files"}, 
+    ["starts-with", "$key", ""],
+    {"acl": "public-read"},
+    {"success_action_redirect": "http://mark-public-files.s3-website-eu-west-1.amazonaws.com/"},
+    ["starts-with", "$Content-Type", ""],
+    ["content-length-range", 0, 1048576]
+  ]
+}
